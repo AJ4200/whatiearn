@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WhatIEarn ⏰💰
 
-## Getting Started
+![WhatIEarn Logo](public/logo.png)
 
-First, run the development server:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Contributors](https://img.shields.io/github/contributors/aj4200/whatiearn)](https://github.com/aj4200/whatiearn/graphs/contributors)
+
+A modern, open-source employee timesheet and payroll calculator built with Next.js
+
+[Demo](https://whatiearn.vercel.app) • [Report Bug](https://github.com/aj4200/whatiearn/issues) • [Request Feature](https://github.com/aj4200/whatiearn/issues)
+
+## ✨ Features
+
+- 📱 Progressive Web App (PWA) - Install on any device
+- ⏱️ Easy time tracking with start/stop functionality
+- 💰 Automatic pay calculation based on hours worked
+- 🗓️ Special rates for Sundays and holidays
+- 📊 Visual reports and statistics
+- 🔄 Offline support with local SQLite storage
+- 📱 Responsive design for all devices
+- 🔐 Simple user management system
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm/yarn/pnpm
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/aj4200/whatiearn.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js 15](https://nextjs.org/) - React Framework
+- [SQLite](https://www.sqlite.org/) - Database
+- [TailwindCSS](https://tailwindcss.com/) - Styling
+- [TypeScript](https://www.typescriptlang.org/) - Language
+- PWA Capabilities
 
-## Learn More
+## 📖 How It Works
 
-To learn more about Next.js, take a look at the following resources:
+WhatIEarn helps track employee working hours and calculate pay with special considerations:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Regular hours: Base pay rate
+- Sunday rates: 1.5x multiplier
+- Holiday rates: 2x multiplier
+- Overtime calculations
+- Break time tracking
+- Monthly/weekly summaries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Key Features
 
-## Deploy on Vercel
+### Time Tracking
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Clock in/out functionality
+- Break time management
+- Automatic overtime detection
+- GPS location tracking (optional)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pay Calculation
+
+- Configurable base pay rates
+- Special day rate multipliers
+- Overtime calculations
+- Tax considerations
+
+### Reporting
+
+- Daily summaries
+- Weekly/Monthly reports
+- Export functionality
+- Visual analytics
+
+### Data Management
+
+- Local SQLite storage
+- Offline capability
+- Data backup/restore
+- Multi-user support
+
+## 🤝 Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🔧 Configuration
+
+The application can be configured through environment variables:
+
+```env
+DATABASE_URL=sqlite://./database.sqlite
+DEFAULT_RATE=25
+SUNDAY_MULTIPLIER=1.5
+HOLIDAY_MULTIPLIER=2.0
+```
+
+## 📦 Project Structure
+
+```
+whatiearn/
+├── app/
+├── components/
+├── lib/
+├── utils/
+└── types/
+├── public/
+├── prisma/
+└── package.json
+```
+
+## 📧 Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+
+Project Link: [https://github.com/aj4200/whatiearn](https://github.com/aj4200/whatiearn)
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
+- [SQLite](https://www.sqlite.org/)
+- All our contributors
+
+---
+
+Made with ❤️ by the open source community
