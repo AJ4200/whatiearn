@@ -19,3 +19,19 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* From Uiverse.io by levxyca */ 
+button {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0.75;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
