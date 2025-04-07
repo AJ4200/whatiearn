@@ -5,7 +5,7 @@ import { Navbar } from './navbar';
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const showNavbar = !['/login', '/register'].includes(pathname);
+  const showNavbar = !['/login', '/register','/'].includes(pathname);
 
   return (
     <>
