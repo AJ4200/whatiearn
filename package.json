@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn next dev",
-    "build": "next build",
+    "dev": "prisma generate && prisma migrate dev --name init && next dev",
+    "build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "npx prisma generate && npx prisma migrate"
