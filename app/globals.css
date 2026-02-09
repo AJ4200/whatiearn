@@ -130,10 +130,8 @@
    LIQUID ANIMATIONS - Standardized System
    ============================================ */
 
-/* Core keyframes */
 @keyframes liquid-flow {
-  0%,
-  100% {
+  0%, 100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transform: rotate(0deg) scale(1);
   }
@@ -152,8 +150,7 @@
 }
 
 @keyframes liquid-pulse {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.6;
     transform: scale(1);
   }
@@ -164,35 +161,49 @@
 }
 
 @keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-8px) rotate(1deg);
-  }
-  66% {
-    transform: translateY(4px) rotate(-1deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-1deg); }
 }
 
 /* Animation utility classes */
 .liquid-blob {
   animation: liquid-flow 15s ease-in-out infinite;
+  will-change: transform, border-radius;
 }
 
 .liquid-blob-slow {
   animation: liquid-flow 20s ease-in-out infinite reverse;
+  will-change: transform, border-radius;
+}
+
+.liquid-blob-pulse {
+  animation: liquid-flow 15s ease-in-out infinite, liquid-pulse 4s ease-in-out infinite;
+}
+
+/* Background blobs - visible fill using theme colors */
+.bg-blob-1 {
+  background: oklch(0.55 0.2 25 / 0.12);
+}
+.bg-blob-2 {
+  background: oklch(0.25 0.05 15 / 0.15);
+}
+.bg-blob-3 {
+  background: oklch(0.55 0.2 25 / 0.18);
+}
+.dark .bg-blob-1 {
+  background: oklch(0.6 0.22 25 / 0.15);
+}
+.dark .bg-blob-2 {
+  background: oklch(0.25 0.04 15 / 0.2);
+}
+.dark .bg-blob-3 {
+  background: oklch(0.6 0.22 25 / 0.2);
 }
 
 .liquid-pulse {
@@ -201,6 +212,7 @@
 
 .float-animation {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Gradient classes */
@@ -215,6 +227,7 @@
   );
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
+  will-change: background-position;
 }
 
 .liquid-gradient-subtle {

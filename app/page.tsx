@@ -7,30 +7,34 @@ import WorkRecords from "@/components/work-records"
 import MonthlyEarnings from "@/components/monthly-earnings"
 import CalendarEntry from "@/components/calendar-entry"
 import RateSettings from "@/components/rate-settings"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/5 liquid-blob" />
-        <div className="absolute top-1/2 -left-40 w-[400px] h-[400px] bg-secondary/5 liquid-blob-slow" />
-        <div className="absolute -bottom-40 right-1/4 w-[450px] h-[450px] bg-primary/3 liquid-blob liquid-pulse" />
+    <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-blob-1 liquid-blob" />
+        <div className="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-blob-2 liquid-blob-slow" />
+        <div className="absolute -bottom-40 right-1/4 w-[450px] h-[450px] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-blob-3 liquid-blob-pulse" />
       </div>
 
-      <div className="container mx-auto p-4 relative z-10">
-        <div className="text-center space-y-2 mb-6">
+      <SiteHeader />
+
+      <main className="flex-1 container mx-auto p-4 relative z-10">
+        <section className="text-center space-y-4 mb-8" aria-label="Welcome">
           <div className="flex items-center justify-center gap-3">
-            <div className="p-2 rounded-xl liquid-gradient float-animation">
-              <Calculator className="h-8 w-8 text-white" />
+            <div className="p-3 rounded-2xl liquid-gradient float-animation shadow-lg">
+              <Calculator className="h-10 w-10 text-white" aria-hidden />
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
               WhatIEarn
-            </h1>
+            </h2>
           </div>
-          <p className="text-muted-foreground">
-            Complete salary tracking with time management and earnings calculation
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Track hours, set rates for normal · Sunday · holiday, and see your earnings at a glance.
           </p>
-        </div>
+        </section>
 
         <Tabs defaultValue="calculator" className="w-full">
           <TabsList className="grid w-full grid-cols-6 mb-6 glass-card">
@@ -84,7 +88,9 @@ export default function Home() {
             <RateSettings />
           </TabsContent>
         </Tabs>
-      </div>
+      </main>
+
+      <SiteFooter />
     </div>
   )
 }
