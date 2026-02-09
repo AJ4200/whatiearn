@@ -1,19 +1,20 @@
 {
-  "name": "Timesheet App",
-  "short_name": "Timesheet",
-  "description": "Modern employee timesheet and payroll calculator",
+  "name": "WhatIEarn - Salary Calculator",
+  "short_name": "WhatIEarn",
+  "description": "Calculate your salary with normal, Sunday, and holiday hours plus custom deductions",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "theme_color": "#374151",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icon-192x192.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icon-512x512.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }

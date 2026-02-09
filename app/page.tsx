@@ -1,54 +1,90 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Clock } from 'lucide-react';
-import Link from 'next/link';
+"use client"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Calculator, Clock, History, TrendingUp, CalendarDays, Settings } from "lucide-react"
+import SalaryCalculator from "@/components/salary-calculator"
+import TimeTracker from "@/components/time-tracker"
+import WorkRecords from "@/components/work-records"
+import MonthlyEarnings from "@/components/monthly-earnings"
+import CalendarEntry from "@/components/calendar-entry"
+import RateSettings from "@/components/rate-settings"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center justify-center space-y-8 text-center">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
-              WhatIEarn App
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/5 liquid-blob" />
+        <div className="absolute top-1/2 -left-40 w-[400px] h-[400px] bg-secondary/5 liquid-blob-slow" />
+        <div className="absolute -bottom-40 right-1/4 w-[450px] h-[450px] bg-primary/3 liquid-blob liquid-pulse" />
+      </div>
+
+      <div className="container mx-auto p-4 relative z-10">
+        <div className="text-center space-y-2 mb-6">
+          <div className="flex items-center justify-center gap-3">
+            <div className="p-2 rounded-xl liquid-gradient float-animation">
+              <Calculator className="h-8 w-8 text-white" />
+            </div>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              WhatIEarn
             </h1>
-            <p className="text-gray-500 dark:text-gray-400">
-              Track your work hours and calculate payroll with ease
-            </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            <Card className="p-6">
-              <Clock className="h-12 w-12 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-2">Time Tracking</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Clock in/out and manage breaks with a simple interface
-              </p>
-            </Card>
-            <Card className="p-6">
-              <Clock className="h-12 w-12 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-2">Pay Calculation</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Automatic overtime and holiday pay calculations
-              </p>
-            </Card>
-            <Card className="p-6">
-              <Clock className="h-12 w-12 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-2">Reports</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Generate detailed reports and analytics
-              </p>
-            </Card>
-          </div>
-          <div className="flex gap-4">
-            <Button asChild>
-              <Link href="/login">Login</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/register">Register</Link>
-            </Button>
-          </div>
+          <p className="text-muted-foreground">
+            Complete salary tracking with time management and earnings calculation
+          </p>
         </div>
-      </main>
+
+        <Tabs defaultValue="calculator" className="w-full">
+          <TabsList className="grid w-full grid-cols-6 mb-6 glass-card">
+            <TabsTrigger value="calculator" className="flex items-center gap-2">
+              <Calculator className="h-4 w-4" />
+              <span className="hidden sm:inline">Calculator</span>
+            </TabsTrigger>
+            <TabsTrigger value="tracker" className="flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              <span className="hidden sm:inline">Tracker</span>
+            </TabsTrigger>
+            <TabsTrigger value="calendar" className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4" />
+              <span className="hidden sm:inline">Calendar</span>
+            </TabsTrigger>
+            <TabsTrigger value="records" className="flex items-center gap-2">
+              <History className="h-4 w-4" />
+              <span className="hidden sm:inline">Records</span>
+            </TabsTrigger>
+            <TabsTrigger value="monthly" className="flex items-center gap-2">
+              <TrendingUp className="h-4 w-4" />
+              <span className="hidden sm:inline">Report</span>
+            </TabsTrigger>
+            <TabsTrigger value="settings" className="flex items-center gap-2">
+              <Settings className="h-4 w-4" />
+              <span className="hidden sm:inline">Settings</span>
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="calculator" className="space-y-6">
+            <SalaryCalculator />
+          </TabsContent>
+
+          <TabsContent value="tracker" className="space-y-6">
+            <TimeTracker />
+          </TabsContent>
+
+          <TabsContent value="calendar" className="space-y-6">
+            <CalendarEntry />
+          </TabsContent>
+
+          <TabsContent value="records" className="space-y-6">
+            <WorkRecords />
+          </TabsContent>
+
+          <TabsContent value="monthly" className="space-y-6">
+            <MonthlyEarnings />
+          </TabsContent>
+
+          <TabsContent value="settings" className="space-y-6">
+            <RateSettings />
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
-  );
+  )
 }
