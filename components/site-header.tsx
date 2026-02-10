@@ -21,9 +21,6 @@ export function SiteHeader() {
           </span>
         </Link>
         <div className="flex items-center gap-2">
-          <span className="text-sm text-muted-foreground hidden sm:inline">
-            Salary & time tracking
-          </span>
           <ThemeToggle />
         </div>
       </div>

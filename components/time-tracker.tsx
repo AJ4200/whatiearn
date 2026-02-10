@@ -196,6 +196,7 @@ export default function TimeTracker() {
               <Play className="h-4 w-4 mr-2" />
               Clock In ({formatCurrency(currentRate)}/hr)
             </Button>
+            
           ) : (
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -206,19 +207,19 @@ export default function TimeTracker() {
                 <Badge variant={getWorkTypeBadgeVariant(activeRecord.workType)}>{activeRecord.workType}</Badge>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 w-full justify-center">
                 {!isOnBreak ? (
-                  <Button onClick={startBreak} variant="outline" className="flex-1 liquid-button bg-transparent">
+                  <Button onClick={startBreak} variant="outline" className="liquid-button bg-transparent rounded-full size-40 w-1/2">
                     <Coffee className="h-4 w-4 mr-2" />
                     Start Break
                   </Button>
                 ) : (
-                  <Button onClick={endBreak} variant="outline" className="flex-1 liquid-button bg-transparent">
+                  <Button onClick={endBreak} variant="outline" className="liquid-button bg-transparent rounded-full size-40 w-1/2">
                     <Pause className="h-4 w-4 mr-2" />
                     End Break
                   </Button>
                 )}
-                <Button onClick={clockOut} variant="destructive" className="flex-1 liquid-button">
+                <Button onClick={clockOut} variant="destructive" className="liquid-button rounded-full size-40 w-1/2">
                   <Square className="h-4 w-4 mr-2" />
                   Clock Out
                 </Button>
