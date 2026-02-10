@@ -209,17 +209,17 @@ export default function TimeTracker() {
 
               <div className="flex gap-2 w-full justify-center">
                 {!isOnBreak ? (
-                  <Button onClick={startBreak} variant="outline" className="liquid-button bg-transparent rounded-full size-40 w-1/2">
+                  <Button onClick={startBreak} variant="outline" className="liquid-button bg-transparent rounded-full w-1/2 h-40">
                     <Coffee className="h-4 w-4 mr-2" />
                     Start Break
                   </Button>
                 ) : (
-                  <Button onClick={endBreak} variant="outline" className="liquid-button bg-transparent rounded-full size-40 w-1/2">
+                  <Button onClick={endBreak} variant="outline" className="liquid-button bg-transparent rounded-full w-1/2 h-40">
                     <Pause className="h-4 w-4 mr-2" />
                     End Break
                   </Button>
                 )}
-                <Button onClick={clockOut} variant="destructive" className="liquid-button rounded-full size-40 w-1/2">
+                <Button onClick={clockOut} variant="destructive" className="liquid-button rounded-full w-1/2 h-40">
                   <Square className="h-4 w-4 mr-2" />
                   Clock Out
                 </Button>

@@ -38,14 +38,14 @@ export default function Home() {
 
         <Tabs defaultValue="tracker" className="w-full">
           <TabsList className="grid w-full grid-cols-6 mb-6 glass-card">
-       <TabsTrigger value="tracker" className="flex items-center gap-2">
+            <TabsTrigger value="tracker" className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
               <span className="hidden sm:inline">Tracker</span>
-            </TabsTrigger> 
-                <TabsTrigger value="calculator" className="flex items-center gap-2">
+            </TabsTrigger>
+            <TabsTrigger value="calculator" className="flex items-center gap-2">
               <Calculator className="h-4 w-4" />
               <span className="hidden sm:inline">Calculator</span>
-            </TabsTrigger>       
+            </TabsTrigger>
             <TabsTrigger value="calendar" className="flex items-center gap-2">
               <CalendarDays className="h-4 w-4" />
               <span className="hidden sm:inline">Calendar</span>
